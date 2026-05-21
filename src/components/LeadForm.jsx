@@ -99,7 +99,7 @@ export default function LeadForm({ isOpen, onClose, ctaText }) {
                   <img 
                     src={logoImg} 
                     alt="Follow Property Logo" 
-                    className="h-12 sm:h-14 w-auto object-contain" 
+                    className="h-6 sm:h-7 w-auto object-contain" 
                   />
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-brand-primaryBg border border-brand-primaryBorder/30 text-[9px] font-bold tracking-widest text-brand-primary uppercase mb-3">

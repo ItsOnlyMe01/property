@@ -55,7 +55,7 @@ export default function Navbar({ data, ctaText, onOpenLeadForm }) {
             <img 
               src={logoImg} 
               alt="Follow Property Logo" 
-              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
+              className="h-5 sm:h-6 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" 
             />
           </div>
 
