@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import WatchlistFlow from './components/WatchlistFlow';
 import Features from './components/Features';
 import About from './components/About';
 import Founder from './components/Founder';
@@ -33,6 +34,11 @@ export default function App() {
         <Hero 
           data={contentData.hero} 
           onOpenLeadForm={handleOpenLeadForm} 
+        />
+
+        {/* Watchlist Section */}
+        <WatchlistFlow 
+          data={contentData.watchlistSection} 
         />
 
         {/* Features Section */}
