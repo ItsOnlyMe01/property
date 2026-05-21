@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import WatchlistFlow from './components/WatchlistFlow';
 import Features from './components/Features';
 import About from './components/About';
-import Founder from './components/Founder';
 import Team from './components/Team';
 import FAQ from './components/FAQ';
 import LeadForm from './components/LeadForm';
@@ -49,11 +48,6 @@ export default function App() {
         {/* About Section */}
         <About 
           data={contentData.about} 
-        />
-
-        {/* Founder Section */}
-        <Founder 
-          data={contentData.founder} 
         />
 
         {/* Team Section */}

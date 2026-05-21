@@ -4,7 +4,7 @@
     "links": [
       "Features",
       "About",
-      "Founder",
+      "Team",
       "FAQ"
     ],
     "ctaText": "Join Waitlist",
@@ -77,13 +77,6 @@
     ],
     "stamp": "Institutional-Grade Valuation Platform"
   },
-  "founder": {
-    "tagline": "FOUNDER SPOTLIGHT",
-    "name": "Fritz Dsouza",
-    "role": "Founder & CEO",
-    "quote": "Indian real estate shouldn't be a game of speculation. We are placing institutional-grade tools and complete transactional transparency into the hands of every homeowner and property buyer across India.",
-    "bio": "A veteran real estate tech entrepreneur with over 12 years of experience analyzing circle rate registrations and property analytics data. Fritz founded FollowProperty to eliminate the information asymmetry that plagues Indian property markets."
-  },
   "faqHeader": {
     "tagline": "KNOWLEDGE BASE",
     "title": "Frequently Asked Questions",
@@ -106,12 +99,35 @@
   "teamHeader": {
     "tagline": "CREATOR & ARCHITECT",
     "title": "Meet the Core Team",
-    "subtitle": "The visionary engineers and analysts building tomorrow's real estate tracking systems."
+    "subtitle": "The visionary engineers and analysts building tomorrow's real estate tracking systems.",
+    "beliefs": {
+      "title": "What Our Team Believes In",
+      "tagline": "OUR CORE VALUES",
+      "items": [
+        {
+          "title": "Trust Through Transparency",
+          "desc": "Real estate shouldn't be a speculative black box. We expose circle rates, court filings, and builder compliance indices openly so you can track with confidence."
+        },
+        {
+          "title": "Democratizing Yield Analytics",
+          "desc": "Making powerful, institutional-grade valuation formulas and real-time yield dashboards accessible to every homeowner and prospective property buyer."
+        },
+        {
+          "title": "Actionable, Non-Biased Data",
+          "desc": "No fake listings. No sponsored builder hypes. We run raw, multi-source algorithmic equations to deliver verified, unbiased property intelligence."
+        }
+      ]
+    }
   },
   "team": [
     {
+      "name": "Fritz Dsouza",
+      "role": "Founder & CEO",
+      "bio": "A veteran real estate tech entrepreneur with over 12 years of experience. Fritz founded FollowProperty to eliminate information asymmetry in property markets."
+    },
+    {
       "name": "Rohit Talwar",
-      "role": "FuLL Stack Developer",
+      "role": "Full Stack Developer",
       "bio": "Systems architect and developer focused on real estate analytics, circle rate scraping engines, and data ledger transparency."
     },
     {
