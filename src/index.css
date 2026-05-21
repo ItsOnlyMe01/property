@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap');
+
+@theme {
+  --font-sans: 'Instrument Sans', 'DM Sans', system-ui, sans-serif;
+
+  --color-brand-bg: #FAFAF8;
+  --color-brand-bgAlt: #F4F3EF;
+  --color-brand-bgCard: #FFFFFF;
+  --color-brand-navy: #0F1629;
+  --color-brand-navyMid: #2D3A52;
+  --color-brand-slate: #5C6880;
+  --color-brand-slateLight: #8C97A8;
+  --color-brand-border: rgba(15,22,41,0.07);
+  --color-brand-borderMid: rgba(15,22,41,0.12);
+  --color-brand-primary: #3B82F6;
+  --color-brand-primaryLight: #60A5FA;
+  --color-brand-primaryDark: #2563EB;
+  --color-brand-primaryBg: rgba(59, 130, 246, 0.06);
+  --color-brand-primaryBorder: rgba(59, 130, 246, 0.18);
+  --color-brand-teal: #0D9488;
+  --color-brand-tealBg: rgba(13,148,136,0.06);
+  --color-brand-tealBorder: rgba(13,148,136,0.16);
+  --color-brand-emerald: #059669;
+  --color-brand-red: #DC2626;
+  --color-brand-redBg: rgba(220,38,38,0.06);
+
+  --shadow-brand: 0 1px 3px rgba(15,22,41,0.05), 0 4px 16px rgba(15,22,41,0.05);
+  --shadow-brand-md: 0 2px 8px rgba(15,22,41,0.06), 0 8px 32px rgba(15,22,41,0.08);
+  --shadow-brand-lg: 0 4px 16px rgba(15,22,41,0.07), 0 16px 48px rgba(15,22,41,0.09);
+  --shadow-brand-primary: 0 8px 32px rgba(59, 130, 246, 0.18);
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-pulse-custom: pulse-custom 2s infinite;
+
+  @keyframes pulse-custom {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+  }
+}
+
+:root {
+  --radius: 0.75rem;
+}
+
+@utility glassmorphic {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 22, 41, 0.06);
+}
+
+@utility glassmorphic-input {
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 22, 41, 0.12);
+  color: #0F1629;
+  transition: all 0.3s ease;
+}
+
+@utility glassmorphic-input-focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
+}
+
+@utility text-glow {
+  text-shadow: 0 2px 10px rgba(59, 130, 246, 0.15);
+}
+
+@layer base {
+  body {
+    background-color: #FAFAF8;
+    color: #0F1629;
+    font-family: 'Instrument Sans', 'DM Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* Custom high-end scrollbar matching warm cream/navy theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAFAF8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #E5E5E0;
+    border-radius: 4px;
+    border: 2px solid #FAFAF8;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D1D1C7;
+  }
+}
+

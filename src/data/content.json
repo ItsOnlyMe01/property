@@ -1,0 +1,164 @@
+{
+  "navbar": {
+    "logo": "FollowProperty",
+    "links": [
+      "Features",
+      "About",
+      "Founder",
+      "FAQ"
+    ],
+    "ctaText": "Join Waitlist",
+    "secondaryCtaText": "Create Account"
+  },
+  "hero": {
+    "badge": "LIVE MARKET INTELLIGENCE",
+    "title": "Empowering Smarter Property Decisions Across India.",
+    "subtitle": "A dual-mode platform to track your owned properties and watchlist assets with institutional-grade data.",
+    "cta": "Join the Waitlist",
+    "stats": [
+      {
+        "value": "62+",
+        "label": "DATA POINTS"
+      },
+      {
+        "value": "40+",
+        "label": "PROPERTY TYPES"
+      },
+      {
+        "value": "12",
+        "label": "INDIAN CITIES"
+      },
+      {
+        "value": "4 Sources",
+        "label": "VALUATION ENGINE"
+      }
+    ],
+    "securityText": "Secure waitlist registry allocation • Zero spam guarantee"
+  },
+  "featuresHeader": {
+    "tagline": "CORE CAPABILITIES",
+    "title": "Engineered for Complete Transparency"
+  },
+  "features": [
+    {
+      "title": "4-Source Valuation",
+      "desc": "Accurate market rates from registrations, builder data, and circle rates."
+    },
+    {
+      "title": "AI-Powered Alerts",
+      "desc": "Daily 6 AM scans of RERA, news, and court registries for your tracked projects."
+    },
+    {
+      "title": "Portfolio Dashboard",
+      "desc": "Stock-market style UI to manage your rental income and EMI payments."
+    }
+  ],
+  "about": {
+    "tagline": "OUR MISSION & VISION",
+    "heading": "Indian Real Estate, Decoded with Data.",
+    "title": "Simplifying Decisions with 62+ Data Points",
+    "description": "We believe Indian real estate shouldn't be a black box. Our institutional-grade analytical engine processes over 62 distinct structural, legal, and transactional data points to simplify complex investment decisions and build trust.",
+    "featureBlocks": [
+      {
+        "type": "security",
+        "title": "Dual-Mode Security",
+        "desc": "Designed equally to guide prospective buyers and secure active property portfolios."
+      },
+      {
+        "type": "database",
+        "title": "62 Distinct Data Fields",
+        "desc": "Granular analysis crossing RERA registration records, court cases, and active market yields."
+      }
+    ],
+    "checklist": [
+      "100% verified registry scans",
+      "Real-time market valuation algorithms",
+      "Builder compliance score index tracking"
+    ],
+    "stamp": "Institutional-Grade Valuation Platform"
+  },
+  "founder": {
+    "tagline": "FOUNDER SPOTLIGHT",
+    "name": "Fritz Dsouza",
+    "role": "Founder & CEO",
+    "quote": "Indian real estate shouldn't be a game of speculation. We are placing institutional-grade tools and complete transactional transparency into the hands of every homeowner and property buyer across India.",
+    "bio": "A veteran real estate tech entrepreneur with over 12 years of experience analyzing circle rate registrations and property analytics data. Fritz founded FollowProperty to eliminate the information asymmetry that plagues Indian property markets."
+  },
+  "faqHeader": {
+    "tagline": "KNOWLEDGE BASE",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about the FollowProperty real estate intelligence network."
+  },
+  "faq": [
+    {
+      "question": "How does the valuation work?",
+      "answer": "We run a proprietary 4-source median formula pulling from official RERA registration indexes, real-time builder pricing data, local circle rates, and actual transaction histories to compute true valuations."
+    },
+    {
+      "question": "Can I track multiple properties?",
+      "answer": "Yes. Each property in your watchlist or active portfolio is tracked and managed separately with its own customized yield, EMI, and appreciation dashboard."
+    },
+    {
+      "question": "When will it launch?",
+      "answer": "Our beta testing platform launches in Q3 2026. Secure your early access spot today by joining our waitlist."
+    }
+  ],
+  "teamHeader": {
+    "tagline": "CREATOR & ARCHITECT",
+    "title": "Meet the Core Team",
+    "subtitle": "The visionary engineers and analysts building tomorrow's real estate tracking systems."
+  },
+  "team": [
+    {
+      "name": "Rohit Talwar",
+      "role": "FuLL Stack Developer",
+      "bio": "Systems architect and developer focused on real estate analytics, circle rate scraping engines, and data ledger transparency."
+    },
+    {
+      "name": "Priya Sharma",
+      "role": "Marketing & Sales",
+      "bio": "Expert in predictive modeling and quantitative valuation formulas. Former housing risk analyst with 8+ years of property analytics experience."
+    },
+    {
+      "name": "Arjun Mehta",
+      "role": "Product Designer",
+      "bio": "UX specialist crafted in secure, high-converting financial interfaces. Passionate about bringing clarity to complex analytical data dashboards."
+    }
+  ],
+  "leadForm": {
+    "waitlistBadge": "★ WAITLIST OPEN",
+    "title": "Request Early Access",
+    "subtitle": "Join our exclusive priority waitlist to secure first-access allocations and yield intelligence dashboards.",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "e.g. Rahul Sharma",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "rahul@example.com",
+    "interestLabel": "I am interested in",
+    "interestOptions": [
+      {
+        "value": "buy",
+        "label": "Looking to Buy"
+      },
+      {
+        "value": "own",
+        "label": "Already Own Property"
+      }
+    ],
+    "buttonText": "Get Early Access",
+    "buttonLoadingText": "securing portal...",
+    "privacyText": "Your data is protected by bank-grade security ledgers.",
+    "successTitle": "Successfully Registered!",
+    "successSubtitle": "Thank you for applying. A representative will contact you shortly to review your priority access portal.",
+    "successCloseText": "Close Panel",
+    "errors": {
+      "nameRequired": "Full name is required",
+      "emailRequired": "Email address is required",
+      "emailInvalid": "Please enter a valid email address"
+    }
+  },
+  "footer": {
+    "address": "Gurgaon Sector 49, IT Spaze Park",
+    "stamp": "PLATFORM",
+    "tagline": "Data transparency analytics."
+  }
+}
