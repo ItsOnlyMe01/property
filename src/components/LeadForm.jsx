@@ -99,7 +99,7 @@ export default function LeadForm({ isOpen, onClose, ctaText }) {
       ></div>
 
       {/* Modal Dialog Card */}
-      <div className="relative w-full max-w-lg rounded-3xl bg-white border border-brand-borderMid/50 shadow-brand-lg overflow-hidden z-10 transition-all duration-300 max-h-[90vh] flex flex-col">
+      <div className="relative w-full max-w-lg rounded-3xl bg-white border border-brand-borderMid/50 shadow-brand-lg overflow-hidden z-10 transition-all duration-300 max-h-[90vh] flex flex-col animate-scaleIn">
         
         {/* Top brand bar in electric blue and teal gradient */}
         <div className="h-1.5 w-full bg-gradient-to-r from-brand-primary via-brand-primaryLight to-brand-teal"></div>
@@ -307,7 +307,7 @@ export default function LeadForm({ isOpen, onClose, ctaText }) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 mt-4 rounded-xl text-xs font-bold tracking-widest uppercase text-white bg-gradient-to-r from-brand-primary to-brand-primaryDark hover:brightness-105 shadow-brand-primary transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer font-sans"
+                  className="w-full py-4 mt-4 rounded-xl text-xs font-bold tracking-widest uppercase text-white bg-gradient-to-r from-brand-primary to-brand-primaryDark shadow-[0_4px_14px_rgba(59,130,246,0.2)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer font-sans"
                 >
                   {isSubmitting ? (
                     <>

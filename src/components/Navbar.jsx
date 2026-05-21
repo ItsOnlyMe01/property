@@ -60,14 +60,15 @@ export default function Navbar({ data, ctaText, onOpenLeadForm }) {
           </div>
 
           {/* Centered Desktop Navigation - dynamically generated links */}
-          <div className="hidden md:flex items-center gap-8 bg-white/40 backdrop-blur-[2px] px-6 py-2 rounded-full border border-brand-borderMid/30 shadow-[0_2px_12px_rgba(0,0,0,0.01)]">
+          <div className="hidden md:flex items-center gap-8 bg-white/50 backdrop-blur-[4px] px-6 py-2.5 rounded-full border border-brand-border/50 shadow-[0_2px_18px_rgba(15,22,41,0.02)]">
             {navLinks.map((link) => (
               <button
                 key={link}
                 onClick={() => handleScrollTo(link.toLowerCase())}
-                className="text-brand-slate hover:text-brand-primary transition-colors text-xs font-semibold tracking-wide cursor-pointer font-sans"
+                className="text-brand-slate hover:text-brand-navy transition-all duration-300 text-xs font-bold tracking-wider cursor-pointer font-sans relative py-0.5 group"
               >
                 {link}
+                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-brand-primary rounded-full transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </div>
@@ -76,7 +77,7 @@ export default function Navbar({ data, ctaText, onOpenLeadForm }) {
           <div className="hidden md:flex items-center gap-6">
             <button
               onClick={onOpenLeadForm}
-              className="px-6 py-3 rounded-xl font-bold text-xs tracking-wider bg-gradient-to-r from-brand-primary to-brand-primaryDark hover:brightness-105 text-white shadow-brand-primary transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer font-sans"
+              className="px-6 py-3 rounded-xl font-bold text-xs tracking-wider uppercase bg-gradient-to-r from-brand-primary to-brand-primaryDark text-white shadow-[0_4px_14px_rgba(59,130,246,0.2)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 active:translate-y-0 hover:brightness-105 active:scale-[0.98] transition-all duration-300 cursor-pointer font-sans"
             >
               {navbarCtaText}
             </button>
@@ -86,37 +87,40 @@ export default function Navbar({ data, ctaText, onOpenLeadForm }) {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-brand-slate hover:text-brand-navy transition-colors cursor-pointer"
+              className="p-2 text-brand-slate hover:text-brand-navy rounded-xl hover:bg-brand-border/5 transition-colors cursor-pointer"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu Panel */}
-      <div className={`md:hidden fixed top-[71px] left-0 w-full h-[calc(100vh-71px)] bg-[#FAFAF8]/98 backdrop-blur-lg border-t border-brand-border transition-all duration-300 ease-in-out z-35 ${
-        isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
+      <div className={`md:hidden absolute top-full left-0 w-full h-[calc(100vh-100%)] bg-[#FAFAF8]/98 backdrop-blur-xl border-t border-brand-border/40 origin-top transition-all duration-300 cubic-bezier(0.16,1,0.3,1) z-35 ${
+        isOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-95 pointer-events-none'
       }`}>
-        <div className="px-6 py-8 flex flex-col gap-6 h-full justify-between">
-          <div className="flex flex-col gap-5">
-            {navLinks.map((link) => (
+        <div className="px-6 py-8 flex flex-col gap-8 h-full justify-between">
+          <div className="flex flex-col gap-4">
+            {navLinks.map((link, idx) => (
               <button
                 key={link}
                 onClick={() => handleScrollTo(link.toLowerCase())}
-                className="text-left text-base font-semibold text-brand-navy hover:text-brand-primary transition-colors py-2.5 border-b border-brand-border cursor-pointer font-sans"
+                style={{ transitionDelay: `${idx * 50}ms` }}
+                className={`text-left text-base font-bold tracking-wide text-brand-navy hover:text-brand-primary transition-all duration-300 py-3 border-b border-brand-border/30 cursor-pointer font-sans transform ${
+                  isOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
+                }`}
               >
                 {link}
               </button>
             ))}
           </div>
-          <div className="mb-12 flex flex-col gap-4">
+          <div className="mb-16 flex flex-col gap-4">
             <button
               onClick={() => {
                 setIsOpen(false);
                 onOpenLeadForm();
               }}
-              className="w-full py-4 text-center font-bold text-sm tracking-wide text-white bg-gradient-to-r from-brand-primary to-brand-primaryDark hover:brightness-105 rounded-xl shadow-brand-primary transition-all duration-300 cursor-pointer font-sans"
+              className="w-full py-4 text-center font-bold text-xs tracking-widest uppercase text-white bg-gradient-to-r from-brand-primary to-brand-primaryDark hover:brightness-105 rounded-xl shadow-[0_4px_14px_rgba(59,130,246,0.2)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.3)] transition-all duration-300 cursor-pointer font-sans"
             >
               {navbarCtaText}
             </button>

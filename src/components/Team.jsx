@@ -1,6 +1,6 @@
 import React from 'react';
 import { Globe, User, Mail, Code2, Award, Sparkles } from 'lucide-react';
-import contentData from '../data/content.json';
+import contentData from '../data/content.js';
 
 export default function Team({ data }) {
   const members = data || contentData.team || [];
@@ -39,14 +39,14 @@ export default function Team({ data }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20 flex flex-col items-center">
-          <div className="inline-block px-3.5 py-1.5 rounded-full bg-white border border-brand-borderMid/50 text-[10px] font-bold tracking-widest text-brand-primary uppercase mb-4 shadow-[0_2px_8px_rgba(0,0,0,0.01)]">
+          <div className="inline-block px-4 py-2 rounded-full bg-white border border-brand-border/40 text-[10px] font-bold tracking-widest text-brand-primary uppercase mb-4 shadow-[0_2px_8px_rgba(0,0,0,0.01)]">
             {header.tagline}
           </div>
           
           <h2 className="text-3xl sm:text-5xl font-extrabold text-brand-navy tracking-tight mb-4 font-sans leading-tight">
             {header.title}
           </h2>
-          <p className="max-w-xl mx-auto text-sm sm:text-base text-brand-slate font-light leading-relaxed">
+          <p className="max-w-xl mx-auto text-xs sm:text-base text-brand-slate font-light leading-relaxed">
             {header.subtitle}
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-brand-primary to-brand-primaryDark mt-6 rounded-full"></div>
@@ -57,7 +57,7 @@ export default function Team({ data }) {
           {members.map((member, index) => (
               <div 
                 key={index} 
-                className="group rounded-3xl bg-white border border-brand-borderMid/45 p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-brand-lg hover:-translate-y-1 relative overflow-hidden"
+                className="group rounded-3xl bg-white border border-brand-border/40 p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-brand-lg hover:-translate-y-1.5 relative overflow-hidden shadow-[0_4px_24px_rgba(15,22,41,0.01)]"
               >
                 {/* Decorative background visual elements */}
                 <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-primary via-brand-primaryLight to-brand-teal"></div>
@@ -114,13 +114,13 @@ export default function Team({ data }) {
 
         {/* Core Values / Beliefs Section */}
         {header.beliefs && (
-          <div className="mt-20 max-w-5xl mx-auto rounded-3xl bg-white border border-brand-borderMid/50 p-6 sm:p-10 shadow-brand relative overflow-hidden">
+          <div className="mt-20 max-w-5xl mx-auto rounded-3xl bg-white border border-brand-border/40 p-6 sm:p-10 shadow-brand-md relative overflow-hidden shadow-[0_4px_28px_rgba(15,22,41,0.01)]">
             {/* Subtle glow background */}
             <div className="absolute -left-16 -top-16 w-48 h-48 bg-brand-primary/5 rounded-full blur-2xl"></div>
             <div className="absolute -right-16 -bottom-16 w-48 h-48 bg-brand-teal/5 rounded-full blur-2xl"></div>
 
             <div className="text-center max-w-2xl mx-auto mb-10 relative z-10 flex flex-col items-center">
-              <span className="text-[9px] font-extrabold tracking-widest text-brand-primary uppercase px-2.5 py-1 rounded bg-brand-primaryBg border border-brand-primaryBorder/30 mb-3 font-sans">
+              <span className="text-[9px] font-extrabold tracking-widest text-brand-primary uppercase px-3 py-1.5 rounded-md bg-brand-primaryBg border border-brand-primaryBorder/30 mb-3 font-sans">
                 {header.beliefs.tagline}
               </span>
               <h3 className="text-xl sm:text-2xl font-extrabold text-brand-navy tracking-tight font-sans">
@@ -128,7 +128,7 @@ export default function Team({ data }) {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
               {header.beliefs.items.map((item, idx) => (
                 <div key={idx} className="flex flex-col gap-2 group">
                   <div className="flex items-center gap-2.5">
@@ -139,7 +139,7 @@ export default function Team({ data }) {
                       {item.title}
                     </h4>
                   </div>
-                  <p className="text-xs sm:text-sm text-brand-slate font-light leading-relaxed font-sans mt-1">
+                  <p className="text-xs sm:text-sm text-brand-slateLight font-light leading-relaxed font-sans mt-1">
                     {item.desc}
                   </p>
                 </div>

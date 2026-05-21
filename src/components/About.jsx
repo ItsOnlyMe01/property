@@ -57,12 +57,12 @@ export default function About({ data }) {
             {/* Structured Feature Blocks */}
             <div className="space-y-4 mt-4">
               {featureBlocks.map((block, idx) => (
-                <div key={idx} className="flex gap-4 p-4 rounded-2xl bg-[#FAFAF8] border border-brand-borderMid/40 shadow-[0_2px_8px_rgba(0,0,0,0.01)]">
-                  <div className={`w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 ${getBlockColors(block.type)}`}>
+                <div key={idx} className="flex gap-4 p-4.5 rounded-2xl bg-white border border-brand-border/30 shadow-[0_2px_12px_rgba(15,22,41,0.01)] hover:border-brand-primary/20 hover:shadow-[0_4px_16px_rgba(15,22,41,0.02)] transition-all duration-300 group hover:-translate-y-0.5">
+                  <div className={`w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105 ${getBlockColors(block.type)}`}>
                     {getBlockIcon(block.type)}
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-brand-navy mb-0.5">
+                    <h4 className="text-sm font-bold text-brand-navy mb-0.5 font-sans">
                       {block.title}
                     </h4>
                     <p className="text-xs text-brand-slate font-light leading-relaxed">
@@ -76,16 +76,16 @@ export default function About({ data }) {
 
           {/* Right Column: Dynamic Content & Descriptive Cards */}
           <div className="lg:col-span-6 flex flex-col justify-center">
-            <div className="bg-[#FAFAF8] rounded-3xl border border-brand-borderMid/40 p-8 sm:p-10 shadow-brand relative overflow-hidden">
+            <div className="bg-white rounded-3xl border border-brand-border/40 p-8 sm:p-10 shadow-brand-md relative overflow-hidden shadow-[0_4px_28px_rgba(15,22,41,0.01)]">
               
               {/* Corner decor glow in brand blue */}
               <div className="absolute -top-16 -right-16 w-32 h-32 bg-brand-primary/4 rounded-full blur-2xl"></div>
 
-              <h3 className="text-xl font-bold text-brand-navy mb-4">
+              <h3 className="text-xl font-bold text-brand-navy mb-4 font-sans">
                 {data.title}
               </h3>
               
-              <p className="text-sm sm:text-base text-brand-slate font-light leading-relaxed mb-8">
+              <p className="text-xs sm:text-sm md:text-base text-brand-slate font-light leading-relaxed mb-8">
                 {data.description}
               </p>
 

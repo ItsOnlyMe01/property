@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
-import contentData from '../data/content.json';
+import contentData from '../data/content.js';
 
 export default function FAQ({ data }) {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -26,14 +26,14 @@ export default function FAQ({ data }) {
         
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
-          <div className="inline-block px-3.5 py-1.5 rounded-full bg-white border border-brand-borderMid/50 text-[10px] font-bold tracking-widest text-brand-primary uppercase mb-4 shadow-[0_2px_8px_rgba(0,0,0,0.01)]">
+          <div className="inline-block px-4 py-2 rounded-full bg-white border border-brand-border/40 text-[10px] font-bold tracking-widest text-brand-primary uppercase mb-4 shadow-[0_2px_8px_rgba(0,0,0,0.01)]">
             <HelpCircle className="w-3.5 h-3.5 inline mr-1 text-brand-primary" />
             {header.tagline}
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-brand-navy tracking-tight mb-4 font-sans leading-tight text-center">
             {header.title}
           </h2>
-          <p className="max-w-xl mx-auto text-sm sm:text-base text-brand-slate font-light leading-relaxed">
+          <p className="max-w-xl mx-auto text-xs sm:text-base text-brand-slate font-light leading-relaxed">
             {header.subtitle}
           </p>
           <div className="w-16 h-1 bg-gradient-to-r from-brand-primary to-brand-primaryDark mt-6 rounded-full"></div>
@@ -47,10 +47,10 @@ export default function FAQ({ data }) {
             return (
               <div 
                 key={index} 
-                className={`rounded-2xl border transition-all duration-300 overflow-hidden bg-white ${
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden bg-white shadow-[0_2px_12px_rgba(15,22,41,0.01)] ${
                   isOpen 
-                    ? 'border-brand-primary/40 shadow-brand-md' 
-                    : 'border-brand-borderMid/40 hover:border-brand-borderMid/80'
+                    ? 'border-brand-primary/45 shadow-brand-md' 
+                    : 'border-brand-border/40 hover:border-brand-borderMid/80'
                 }`}
               >
                 {/* Accordion Trigger */}

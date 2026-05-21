@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart3, Bell, Landmark, ShieldCheck } from 'lucide-react';
-import contentData from '../data/content.json';
+import contentData from '../data/content.js';
 
 export default function Features({ data }) {
   const features = data || contentData.features || [];
@@ -34,7 +34,7 @@ export default function Features({ data }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center mb-12 sm:mb-16 flex flex-col items-center">
-          <div className="inline-block px-3 py-1 rounded-full bg-white border border-brand-borderMid/50 text-[9px] font-bold tracking-widest text-brand-slate uppercase mb-3 shadow-[0_1px_5px_rgba(0,0,0,0.01)]">
+          <div className="inline-block px-4 py-2 rounded-full bg-white border border-brand-border/40 text-[9px] font-bold tracking-widest text-brand-slate uppercase mb-3 shadow-[0_1px_5px_rgba(0,0,0,0.01)]">
             {header.tagline}
           </div>
           <h3 className="text-2xl sm:text-4xl font-extrabold text-brand-navy tracking-tight font-sans">
@@ -47,10 +47,10 @@ export default function Features({ data }) {
           {features.map((feature, idx) => (
             <div 
               key={idx}
-              className="bg-white rounded-2xl border border-brand-borderMid/30 p-6 sm:p-8 hover:-translate-y-1 hover:shadow-brand transition-all duration-300 flex flex-col items-start"
+              className="bg-white rounded-3xl border border-brand-border/40 p-6 sm:p-8 hover:-translate-y-1 hover:shadow-brand-md transition-all duration-300 flex flex-col items-start group shadow-[0_4px_24px_rgba(15,22,41,0.01)]"
             >
               {/* Dynamic Icon with conditional theme bg */}
-              <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-6 shadow-inner ${getFeatureIconBg(idx)}`}>
+              <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center mb-6 shadow-inner transition-all duration-300 group-hover:scale-[1.04] ${getFeatureIconBg(idx)}`}>
                 {getFeatureIcon(idx)}
               </div>
 

@@ -11,36 +11,36 @@ export default function Hero({ data, onOpenLeadForm }) {
   const campaign = contentData.marketCampaign;
 
   return (
-    <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden flex flex-col justify-center items-center bg-[#FAFAF8]">
+    <section className="relative pt-24 pb-14 md:pt-36 md:pb-20 overflow-hidden flex flex-col justify-center items-center bg-[#FAFAF8]">
       
       {/* Decorative gradient glow in electric blue brand color */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[320px] sm:h-[600px] bg-brand-primary/5 rounded-full blur-[80px] sm:blur-[140px] pointer-events-none z-0"></div>
-
+ 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
         
         {/* Live Market Intelligence Pill Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-primaryBg border border-brand-primaryBorder/60 mb-6 sm:mb-8 shadow-[0_2px_10px_rgba(59,130,246,0.02)]">
-          <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primaryBg border border-brand-primaryBorder/60 mb-6 sm:mb-8 shadow-[0_2px_12px_rgba(59,130,246,0.03)] transition-transform duration-300 hover:scale-[1.02]">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
           <span className="text-[9px] sm:text-xs font-bold tracking-widest text-brand-primary uppercase font-sans">
             {badgeText}
           </span>
         </div>
 
         {/* Dynamic, Bold Fintech Headline */}
-        <h1 className="max-w-4xl mx-auto text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-navy leading-[1.15] sm:leading-[1.08] mb-6 font-sans px-2">
+        <h1 className="max-w-4xl mx-auto text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-navy leading-[1.12] sm:leading-[1.08] mb-6 font-sans px-2">
           {data.title}
         </h1>
 
         {/* Dynamic Subheadline */}
-        <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl text-brand-slate font-light leading-relaxed mb-10 px-4 sm:px-0">
+        <p className="max-w-2xl mx-auto text-xs sm:text-base md:text-lg lg:text-xl text-brand-slate font-light leading-relaxed mb-8 px-4 sm:px-0">
           {data.subtitle}
         </p>
 
         {/* High-Converting Join the Waitlist CTA */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 w-full max-w-sm sm:max-w-md px-4 sm:px-0">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10 w-full max-w-sm sm:max-w-md px-4 sm:px-0">
           <button
             onClick={onOpenLeadForm}
-            className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase bg-gradient-to-r from-brand-primary to-brand-primaryDark hover:brightness-105 text-white shadow-brand-primary transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 cursor-pointer font-sans"
+            className="w-full sm:w-auto px-10 py-4.5 rounded-full font-bold text-xs sm:text-sm tracking-widest uppercase bg-gradient-to-r from-brand-primary to-brand-primaryDark text-white shadow-[0_4px_16px_rgba(59,130,246,0.2)] hover:shadow-[0_8px_24px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer font-sans"
           >
             <Home className="w-4 h-4 fill-white/10" />
             {data.cta}
@@ -50,28 +50,28 @@ export default function Hero({ data, onOpenLeadForm }) {
 
         {/* Dynamic Urgency / EOI FOMO Banner */}
         {campaign && (
-          <div className="w-full max-w-2xl mx-auto rounded-2xl bg-gradient-to-r from-brand-primary/5 via-brand-teal/5 to-brand-primary/5 border border-brand-primaryBorder/30 p-5 sm:p-6 mb-12 shadow-[0_4px_24px_rgba(59,130,246,0.02)] relative overflow-hidden group">
+          <div className="w-full max-w-2xl mx-auto rounded-3xl bg-gradient-to-r from-brand-primary/5 via-brand-teal/5 to-brand-primary/5 border border-brand-primaryBorder/30 p-5 sm:p-6 mb-12 shadow-[0_4px_24px_rgba(59,130,246,0.02)] hover:shadow-[0_10px_36px_rgba(59,130,246,0.06)] relative overflow-hidden group transition-all duration-500 animate-float">
             
             {/* Top high-end micro-animation bar */}
-            <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-brand-primary via-brand-teal to-brand-primary animate-pulse"></div>
+            <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-brand-primary via-brand-teal to-brand-primary animate-pulse"></div>
 
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left relative z-10">
               <div className="flex flex-col gap-1">
-                <span className="text-[10px] font-extrabold tracking-widest text-[#E11D48] bg-rose-50 border border-rose-100 rounded px-2.5 py-0.5 self-center md:self-start uppercase animate-pulse">
+                <span className="text-[10px] font-extrabold tracking-widest text-[#E11D48] bg-rose-50 border border-rose-100/60 rounded px-2.5 py-0.5 self-center md:self-start uppercase animate-pulse">
                   ⚡ {campaign.closingSoonText || 'EOI WINDOW CLOSING SOON'}
                 </span>
-                <p className="text-xs sm:text-sm font-semibold text-brand-navy mt-1.5 font-sans">
-                  {campaign.inauguralOffer} on <span className="text-[#E11D48] font-bold underline decoration-dotted">{campaign.deadline}</span>
+                <p className="text-xs sm:text-sm font-extrabold text-brand-navy mt-2 font-sans">
+                  {campaign.inauguralOffer} on <span className="text-[#E11D48] underline decoration-dotted font-black">{campaign.deadline}</span>
                 </p>
-                <p className="text-[10px] sm:text-xs text-brand-slate font-light italic font-sans">
+                <p className="text-[10px] sm:text-xs text-brand-slateLight font-medium italic font-sans mt-0.5">
                   "{campaign.thankYouText}"
                 </p>
               </div>
 
               {/* Number display counter */}
-              <div className="flex items-center gap-3 bg-white border border-brand-borderMid/50 p-2.5 sm:p-3 rounded-xl shadow-brand-sm group-hover:scale-[1.02] transition-transform duration-300 select-none">
+              <div className="flex items-center gap-3 bg-white border border-brand-borderMid/40 p-3 sm:p-4 rounded-2xl shadow-brand-md group-hover:scale-[1.03] transition-transform duration-300 select-none">
                 <div className="text-center">
-                  <span className="block text-2xl sm:text-3xl font-black text-brand-primary tracking-tight font-sans">
+                  <span className="block text-3xl sm:text-4xl font-black text-brand-primary tracking-tight font-sans leading-none mb-1">
                     {campaign.eoiCount}
                   </span>
                   <span className="block text-[8px] sm:text-[9px] font-extrabold tracking-widest text-brand-slate uppercase font-sans">
@@ -85,18 +85,18 @@ export default function Hero({ data, onOpenLeadForm }) {
 
         {/* Dynamic Trust Stats grid */}
         {stats.length > 0 && (
-          <div className="w-full max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-4 py-8 border-y border-brand-borderMid/60 bg-white/30 backdrop-blur-[2px] rounded-2xl mb-12">
+          <div className="w-full max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-4 py-8 border-y border-brand-border/40 bg-white/45 backdrop-blur-[4px] rounded-3xl mb-12 shadow-[0_4px_24px_rgba(15,22,41,0.01)]">
             {stats.map((stat, idx) => (
               <div 
                 key={idx} 
                 className={`flex flex-col items-center justify-center ${
-                  idx < stats.length - 1 ? 'border-r border-brand-borderMid/50' : ''
+                  idx < stats.length - 1 ? 'md:border-r border-brand-border/30' : ''
                 }`}
               >
                 <span className="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight mb-0.5 sm:mb-1">
                   {stat.value}
                 </span>
-                <span className="text-[9px] sm:text-xs font-bold tracking-widest text-brand-slate uppercase font-sans">
+                <span className="text-[9px] sm:text-xs font-bold tracking-widest text-brand-slateLight uppercase font-sans">
                   {stat.label}
                 </span>
               </div>

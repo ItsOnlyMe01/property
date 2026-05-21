@@ -240,14 +240,14 @@ export default function WatchlistFlow({ data }) {
                           handleFieldChange('mainCategory', cat.id);
                           handleFieldChange('specificType', ''); // Reset child type
                         }}
-                        className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
+                        className={`flex items-center gap-3.5 p-3.5 rounded-2xl border text-left transition-all duration-300 hover:-translate-y-0.5 cursor-pointer shadow-[0_2px_8px_rgba(15,22,41,0.01)] ${
                           isSelected 
-                            ? 'border-brand-primary bg-brand-primaryBg shadow-[0_2px_8px_rgba(59,130,246,0.06)]' 
-                            : 'border-brand-borderMid/50 bg-white hover:border-brand-borderMid/80'
+                            ? 'border-brand-primary bg-brand-primaryBg shadow-[0_4px_12px_rgba(59,130,246,0.08)]' 
+                            : 'border-brand-border/40 bg-white hover:border-brand-borderMid/80 hover:shadow-[0_4px_12px_rgba(15,22,41,0.02)]'
                         }`}
                       >
-                        <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                          isSelected ? 'bg-brand-primary text-white' : 'bg-brand-bgAlt text-brand-slate'
+                        <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                          isSelected ? 'bg-brand-primary text-white' : 'bg-brand-bgAlt text-brand-slateLight'
                         }`}>
                           <IconComponent className="w-4 h-4" />
                         </div>
@@ -495,9 +495,9 @@ export default function WatchlistFlow({ data }) {
               <button
                 type="submit"
                 disabled={submitting}
-                className={`w-full py-4 rounded-full text-xs sm:text-sm font-extrabold tracking-wider uppercase text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 cursor-pointer font-sans ${
+                className={`w-full py-4 rounded-xl text-xs sm:text-sm font-extrabold tracking-widest uppercase text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] flex items-center justify-center gap-2.5 cursor-pointer font-sans ${
                   requiredFilled 
-                    ? 'bg-gradient-to-r from-brand-primary to-brand-primaryDark shadow-brand-primary hover:brightness-105' 
+                    ? 'bg-gradient-to-r from-brand-primary to-brand-primaryDark shadow-[0_4px_14px_rgba(59,130,246,0.2)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.3)] hover:brightness-105' 
                     : 'bg-brand-slateLight cursor-not-allowed opacity-60'
                 }`}
               >
