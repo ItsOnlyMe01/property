@@ -129,11 +129,17 @@
     "waitlistBadge": "★ WAITLIST OPEN",
     "title": "Request Early Access",
     "subtitle": "Join our exclusive priority waitlist to secure first-access allocations and yield intelligence dashboards.",
-    "nameLabel": "Full Name",
-    "namePlaceholder": "e.g. Rahul Sharma",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "e.g. Rahul",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "e.g. Sharma",
     "emailLabel": "Email Address",
     "emailPlaceholder": "rahul@example.com",
-    "interestLabel": "I am interested in",
+    "cityLabel": "City",
+    "cityPlaceholder": "e.g. Gurgaon",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "e.g. 9876543210",
+    "interestLabel": "Looking For",
     "interestOptions": [
       {
         "value": "buy",
@@ -151,9 +157,13 @@
     "successSubtitle": "Thank you for applying. A representative will contact you shortly to review your priority access portal.",
     "successCloseText": "Close Panel",
     "errors": {
-      "nameRequired": "Full name is required",
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
       "emailRequired": "Email address is required",
-      "emailInvalid": "Please enter a valid email address"
+      "emailInvalid": "Please enter a valid email address",
+      "cityRequired": "City is required",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Please enter a valid 10-digit phone number"
     }
   },
   "watchlistSection": {

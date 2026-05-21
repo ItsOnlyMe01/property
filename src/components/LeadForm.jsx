@@ -7,8 +7,11 @@ export default function LeadForm({ isOpen, onClose, ctaText }) {
   const strings = contentData.leadForm || {};
 
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
+    city: '',
+    phone: '',
     interest: 'own'
   });
   const [errors, setErrors] = useState({});
@@ -34,13 +37,24 @@ export default function LeadForm({ isOpen, onClose, ctaText }) {
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.name.trim()) {
-      newErrors.name = strings.errors?.nameRequired || 'Full name is required';
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = strings.errors?.firstNameRequired || 'First name is required';
+    }
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = strings.errors?.lastNameRequired || 'Last name is required';
     }
     if (!formData.email.trim()) {
       newErrors.email = strings.errors?.emailRequired || 'Email address is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = strings.errors?.emailInvalid || 'Please enter a valid email address';
+    }
+    if (!formData.city.trim()) {
+      newErrors.city = strings.errors?.cityRequired || 'City is required';
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = strings.errors?.phoneRequired || 'Phone number is required';
+    } else if (!/^\d{10}$/.test(formData.phone.trim())) {
+      newErrors.phone = strings.errors?.phoneInvalid || 'Please enter a valid 10-digit phone number';
     }
     return newErrors;
   };
@@ -59,7 +73,14 @@ export default function LeadForm({ isOpen, onClose, ctaText }) {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-      setFormData({ name: '', email: '', interest: 'own' });
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        city: '',
+        phone: '',
+        interest: 'own'
+      });
     }, 1500);
   };
 
@@ -116,25 +137,47 @@ export default function LeadForm({ isOpen, onClose, ctaText }) {
               {/* Form Input fields */}
               <form onSubmit={handleSubmit} className="space-y-5">
                 
-                {/* Full Name */}
-                <div>
-                  <label htmlFor="name" className="block text-[10px] font-bold uppercase tracking-wider text-brand-slate mb-2 font-sans">
-                    {strings.nameLabel || 'Full Name'} <span className="text-brand-red">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder={strings.namePlaceholder || 'e.g. Rahul Sharma'}
-                    className={`w-full px-4 py-3.5 rounded-xl text-sm text-brand-navy bg-white border border-brand-borderMid/50 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all duration-200 placeholder-brand-slateLight/75 ${
-                      errors.name ? 'border-brand-red focus:border-brand-red focus:ring-brand-red/10' : ''
-                    }`}
-                  />
-                  {errors.name && (
-                    <p className="text-xs text-brand-red mt-1.5 font-semibold font-sans">{errors.name}</p>
-                  )}
+                {/* First Name & Last Name */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-[10px] font-bold uppercase tracking-wider text-brand-slate mb-2 font-sans">
+                      {strings.firstNameLabel || 'First Name'} <span className="text-brand-red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      placeholder={strings.firstNamePlaceholder || 'e.g. Rahul'}
+                      className={`w-full px-4 py-3.5 rounded-xl text-sm text-brand-navy bg-white border border-brand-borderMid/50 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all duration-200 placeholder-brand-slateLight/75 ${
+                        errors.firstName ? 'border-brand-red focus:border-brand-red focus:ring-brand-red/10' : ''
+                      }`}
+                    />
+                    {errors.firstName && (
+                      <p className="text-xs text-brand-red mt-1.5 font-semibold font-sans">{errors.firstName}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="lastName" className="block text-[10px] font-bold uppercase tracking-wider text-brand-slate mb-2 font-sans">
+                      {strings.lastNameLabel || 'Last Name'} <span className="text-brand-red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      placeholder={strings.lastNamePlaceholder || 'e.g. Sharma'}
+                      className={`w-full px-4 py-3.5 rounded-xl text-sm text-brand-navy bg-white border border-brand-borderMid/50 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all duration-200 placeholder-brand-slateLight/75 ${
+                        errors.lastName ? 'border-brand-red focus:border-brand-red focus:ring-brand-red/10' : ''
+                      }`}
+                    />
+                    {errors.lastName && (
+                      <p className="text-xs text-brand-red mt-1.5 font-semibold font-sans">{errors.lastName}</p>
+                    )}
+                  </div>
                 </div>
 
                 {/* Email Address */}
@@ -158,10 +201,53 @@ export default function LeadForm({ isOpen, onClose, ctaText }) {
                   )}
                 </div>
 
+                {/* City & Phone Number */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="city" className="block text-[10px] font-bold uppercase tracking-wider text-brand-slate mb-2 font-sans">
+                      {strings.cityLabel || 'City'} <span className="text-brand-red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      value={formData.city}
+                      onChange={handleChange}
+                      placeholder={strings.cityPlaceholder || 'e.g. Gurgaon'}
+                      className={`w-full px-4 py-3.5 rounded-xl text-sm text-brand-navy bg-white border border-brand-borderMid/50 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all duration-200 placeholder-brand-slateLight/75 ${
+                        errors.city ? 'border-brand-red focus:border-brand-red focus:ring-brand-red/10' : ''
+                      }`}
+                    />
+                    {errors.city && (
+                      <p className="text-xs text-brand-red mt-1.5 font-semibold font-sans">{errors.city}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-[10px] font-bold uppercase tracking-wider text-brand-slate mb-2 font-sans">
+                      {strings.phoneLabel || 'Phone Number'} <span className="text-brand-red">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder={strings.phonePlaceholder || '9876543210'}
+                      className={`w-full px-4 py-3.5 rounded-xl text-sm text-brand-navy bg-white border border-brand-borderMid/50 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all duration-200 placeholder-brand-slateLight/75 ${
+                        errors.phone ? 'border-brand-red focus:border-brand-red focus:ring-brand-red/10' : ''
+                      }`}
+                    />
+                    {errors.phone && (
+                      <p className="text-xs text-brand-red mt-1.5 font-semibold font-sans">{errors.phone}</p>
+                    )}
+                  </div>
+                </div>
+
                 {/* Interest Dropdown */}
                 <div>
                   <label htmlFor="interest" className="block text-[10px] font-bold uppercase tracking-wider text-brand-slate mb-2 font-sans">
-                    {strings.interestLabel || 'I am interested in'}
+                    {strings.interestLabel || 'Looking For'}
                   </label>
                   <div className="relative">
                     <select
