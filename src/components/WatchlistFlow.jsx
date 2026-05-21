@@ -138,49 +138,67 @@ export default function WatchlistFlow({ data }) {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Card Frame Wrapper */}
-        <div className="bg-[#FAFAF8] rounded-3xl border border-brand-borderMid/50 p-6 sm:p-10 shadow-brand overflow-hidden relative">
-          
-          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-primary via-brand-primaryLight to-brand-teal"></div>
-          
-          {/* Header Description */}
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-primaryBg border border-brand-primaryBorder/30 text-[9px] font-bold tracking-widest text-brand-primary uppercase mb-3 font-sans">
-              <Sparkles className="w-3.5 h-3.5 fill-brand-primary/10" />
-              VALUATION RADAR FLOW
+        {!isOpen ? (
+          /* Closed State: Ultra-clean, borderless, matching landing page aesthetics */
+          <div className="max-w-3xl mx-auto text-center py-6 sm:py-10 animate-fadeIn">
+            {/* Small subtle pill badge */}
+            <div className="inline-block px-3.5 py-1.5 rounded-full bg-white border border-brand-borderMid/50 text-[9px] font-bold tracking-widest text-brand-primary uppercase mb-4 shadow-[0_1px_5px_rgba(0,0,0,0.01)] font-sans">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-primary inline-block mr-1.5 animate-pulse"></span>
+              {data.badge || 'VALUATION RADAR'}
             </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight font-sans mb-3">
+            
+            <h3 className="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight font-sans mb-4">
               {data.title}
             </h3>
-            <p className="text-xs sm:text-sm text-brand-slate font-light leading-relaxed">
+            
+            <p className="text-sm sm:text-base text-brand-slate font-light leading-relaxed mb-8 max-w-xl mx-auto">
               {data.subtitle}
             </p>
-          </div>
 
-          {/* Action toggle buttons */}
-          <div className="flex justify-center mb-8">
-            {!isOpen ? (
+            <div className="flex justify-center">
               <button
                 onClick={() => setIsOpen(true)}
-                className="px-8 py-4 rounded-xl font-bold text-xs sm:text-sm tracking-wider uppercase text-white bg-gradient-to-r from-brand-primary to-brand-primaryDark hover:brightness-105 shadow-brand-primary transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2.5 cursor-pointer font-sans"
+                className="px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-white bg-gradient-to-r from-brand-primary to-brand-primaryDark hover:brightness-105 shadow-brand-primary transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 cursor-pointer font-sans"
               >
                 {data.ctaText}
                 <ArrowRight className="w-4 h-4" />
               </button>
-            ) : (
-              <button
-                onClick={() => setIsOpen(false)}
-                className="px-6 py-2.5 rounded-xl font-bold text-xs text-brand-slate hover:text-brand-navy bg-white hover:bg-brand-bgAlt border border-brand-borderMid/60 transition-all duration-200 flex items-center gap-2 cursor-pointer font-sans"
-              >
-                <X className="w-4 h-4 text-brand-slateLight" />
-                {data.collapseText}
-              </button>
-            )}
+            </div>
           </div>
+        ) : (
+          /* Opened State: Beautifully framed card for the full wizard flow */
+          <div className="bg-[#FAFAF8] rounded-3xl border border-brand-borderMid/50 p-6 sm:p-10 shadow-brand-md overflow-hidden relative animate-fadeIn">
+            
+            {/* High-end gradient border top */}
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-primary via-brand-primaryLight to-brand-teal"></div>
+            
+            {/* Elegant Header with Collapse Icon */}
+            <div className="text-center max-w-2xl mx-auto mb-10 relative">
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="absolute -top-1 -right-1 sm:top-0 sm:right-0 p-2 rounded-full hover:bg-brand-borderMid/10 text-brand-slateLight hover:text-brand-navy transition-all duration-200 cursor-pointer"
+                title={data.collapseText}
+              >
+                <X className="w-5 h-5" />
+              </button>
 
-          {/* Expanded Flow Segment */}
-          {isOpen && (
-            <form onSubmit={handleSubmit} className="space-y-6 pt-6 border-t border-brand-borderMid/50 animate-fadeIn">
+              <div className="inline-block px-3.5 py-1.5 rounded-full bg-white border border-brand-borderMid/50 text-[9px] font-bold tracking-widest text-brand-primary uppercase mb-4 shadow-[0_1px_5px_rgba(0,0,0,0.01)] font-sans">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-primary inline-block mr-1.5"></span>
+                CONFIGURING RADAR
+              </div>
+              
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight font-sans mb-3">
+                {data.title}
+              </h3>
+              
+              <p className="text-xs sm:text-sm text-brand-slate font-light leading-relaxed max-w-xl mx-auto">
+                {data.subtitle}
+              </p>
+            </div>
+
+            {/* Wizard Form */}
+            <form onSubmit={handleSubmit} className="space-y-6 pt-6 border-t border-brand-borderMid/50">
               
               {/* Field 01: Main Category (Custom dynamic grid) */}
               <div>
@@ -326,7 +344,7 @@ export default function WatchlistFlow({ data }) {
                 <button
                   type="button"
                   onClick={() => setShowOptional(!showOptional)}
-                  className="flex items-center justify-between w-full py-3.5 px-4 rounded-xl border border-brand-borderMid/40 bg-white hover:bg-brand-bgAlt transition-colors cursor-pointer text-left"
+                  className="flex items-center justify-between w-full py-3.5 px-4 rounded-xl border border-brand-borderMid/40 bg-white hover:bg-brand-bgAlt transition-colors cursor-pointer text-left font-sans"
                 >
                   <span className="text-[10px] font-bold uppercase tracking-widest text-brand-slate flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
@@ -455,7 +473,7 @@ export default function WatchlistFlow({ data }) {
               <button
                 type="submit"
                 disabled={submitting}
-                className={`w-full py-4 rounded-xl text-xs sm:text-sm font-extrabold tracking-wider uppercase text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer font-sans ${
+                className={`w-full py-4 rounded-full text-xs sm:text-sm font-extrabold tracking-wider uppercase text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 cursor-pointer font-sans ${
                   requiredFilled 
                     ? 'bg-gradient-to-r from-brand-primary to-brand-primaryDark shadow-brand-primary hover:brightness-105' 
                     : 'bg-brand-slateLight cursor-not-allowed opacity-60'
@@ -474,14 +492,25 @@ export default function WatchlistFlow({ data }) {
                 )}
               </button>
 
+              {/* Close Setup Action */}
+              <div className="flex justify-center pt-2">
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="px-5 py-2 rounded-full font-bold text-[10px] uppercase tracking-wider text-brand-slate hover:text-brand-navy hover:bg-brand-borderMid/5 transition-all duration-250 flex items-center gap-1.5 cursor-pointer font-sans"
+                >
+                  <X className="w-3.5 h-3.5 text-brand-slateLight" />
+                  {data.collapseText}
+                </button>
+              </div>
+
               <p className="text-[10px] text-brand-slateLight font-light text-center leading-relaxed">
                 <span className="text-brand-primary font-bold">*</span> Required fields • Optional setup parameters help customize daily scrap alerts
               </p>
 
             </form>
-          )}
-
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

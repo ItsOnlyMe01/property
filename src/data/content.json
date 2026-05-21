@@ -157,9 +157,9 @@
     }
   },
   "watchlistSection": {
-    "title": "Setup Property Investment Radar",
-    "subtitle": "Activate live valuation trackers, local circle rate charts, and 6 AM daily registry scans by selecting your investment criteria.",
-    "ctaText": "Configure Radar & Create Watchlist",
+    "title": "Appraisal Radar & Watchlist",
+    "subtitle": "Track official registrations, circle rate shifts, and builder compliance indices in real-time.",
+    "ctaText": "Configure Investment Radar",
     "collapseText": "Close Setup Panel",
     "successTitle": "Radar Activated successfully!",
     "successSubtitle": "Your property tracker is live. We are writing parameters to sessionStorage.",
