@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo.svg';
 
 export default function Navbar({ data, ctaText, onOpenLeadForm }) {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Check, Lock, ArrowRight } from 'lucide-react';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo.svg';
 import contentData from '../data/content.json';
 
 export default function LeadForm({ isOpen, onClose, ctaText }) {
