@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import contentData from '../data/content.js';
 import { 
   Home, 
   Briefcase, 
@@ -155,6 +156,18 @@ export default function WatchlistFlow({ data }) {
               {data.subtitle}
             </p>
 
+            {/* Subtle premium EOI closing warning inline with site branding */}
+            {contentData.marketCampaign && (
+              <div className="mb-8 flex items-center justify-center gap-2">
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-rose-50 border border-rose-100/60 text-[9px] font-extrabold tracking-widest text-[#E11D48] uppercase animate-pulse">
+                  ⚡ {contentData.marketCampaign.closingSoonText}
+                </span>
+                <span className="text-xs text-brand-navy font-bold font-sans">
+                  {contentData.marketCampaign.inauguralOffer} on <span className="text-[#E11D48] underline decoration-dotted">{contentData.marketCampaign.deadline}</span>
+                </span>
+              </div>
+            )}
+
             <div className="flex justify-center">
               <button
                 onClick={() => setIsOpen(true)}
@@ -195,6 +208,15 @@ export default function WatchlistFlow({ data }) {
               <p className="text-xs sm:text-sm text-brand-slate font-light leading-relaxed max-w-xl mx-auto">
                 {data.subtitle}
               </p>
+
+              {contentData.marketCampaign && (
+                <div className="mt-4 inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-100/60 text-[10px] text-brand-navy font-semibold font-sans">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E11D48] animate-ping text-rose-500"></span>
+                  <span className="text-[#E11D48] font-extrabold tracking-wider text-[8px] uppercase">{contentData.marketCampaign.closingSoonText}</span>
+                  <span className="text-brand-slateLight">•</span>
+                  <span>{contentData.marketCampaign.inauguralOffer} is active for <span className="text-[#E11D48] underline decoration-dotted font-bold">{contentData.marketCampaign.deadline}</span></span>
+                </div>
+              )}
             </div>
 
             {/* Wizard Form */}

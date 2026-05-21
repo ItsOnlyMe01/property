@@ -311,5 +311,14 @@
     "address": "Gurgaon Sector 49, IT Spaze Park",
     "stamp": "PLATFORM",
     "tagline": "Data transparency analytics."
+  },
+  "marketCampaign": {
+    "badge": "Strong Market Response",
+    "eoiCount": "196",
+    "eoiLabel": "Expressions of Interest Received",
+    "thankYouText": "Thank you, Gurugram, for your overwhelming response.",
+    "closingSoonText": "EOI WINDOW CLOSING SOON",
+    "inauguralOffer": "WITHDRAWAL OF INAUGURAL OFFER (₹1,000 PSF)",
+    "deadline": "MONDAY, 1st JUNE"
   }
 }

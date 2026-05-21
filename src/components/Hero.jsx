@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Home, ShieldCheck } from 'lucide-react';
+import contentData from '../data/content.js';
 
 export default function Hero({ data, onOpenLeadForm }) {
   if (!data) return null;
@@ -7,6 +8,7 @@ export default function Hero({ data, onOpenLeadForm }) {
   const stats = data.stats || [];
   const badgeText = data.badge || 'LIVE MARKET INTELLIGENCE';
   const securityText = data.securityText || 'Secure waitlist registry allocation • Zero spam guarantee';
+  const campaign = contentData.marketCampaign;
 
   return (
     <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden flex flex-col justify-center items-center bg-[#FAFAF8]">
@@ -35,7 +37,7 @@ export default function Hero({ data, onOpenLeadForm }) {
         </p>
 
         {/* High-Converting Join the Waitlist CTA */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 w-full max-w-sm sm:max-w-md px-4 sm:px-0">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 w-full max-w-sm sm:max-w-md px-4 sm:px-0">
           <button
             onClick={onOpenLeadForm}
             className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase bg-gradient-to-r from-brand-primary to-brand-primaryDark hover:brightness-105 text-white shadow-brand-primary transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 cursor-pointer font-sans"
@@ -45,6 +47,41 @@ export default function Hero({ data, onOpenLeadForm }) {
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
+
+        {/* Dynamic Urgency / EOI FOMO Banner */}
+        {campaign && (
+          <div className="w-full max-w-2xl mx-auto rounded-2xl bg-gradient-to-r from-brand-primary/5 via-brand-teal/5 to-brand-primary/5 border border-brand-primaryBorder/30 p-5 sm:p-6 mb-12 shadow-[0_4px_24px_rgba(59,130,246,0.02)] relative overflow-hidden group">
+            
+            {/* Top high-end micro-animation bar */}
+            <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-brand-primary via-brand-teal to-brand-primary animate-pulse"></div>
+
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left relative z-10">
+              <div className="flex flex-col gap-1">
+                <span className="text-[10px] font-extrabold tracking-widest text-[#E11D48] bg-rose-50 border border-rose-100 rounded px-2.5 py-0.5 self-center md:self-start uppercase animate-pulse">
+                  ⚡ {campaign.closingSoonText || 'EOI WINDOW CLOSING SOON'}
+                </span>
+                <p className="text-xs sm:text-sm font-semibold text-brand-navy mt-1.5 font-sans">
+                  {campaign.inauguralOffer} on <span className="text-[#E11D48] font-bold underline decoration-dotted">{campaign.deadline}</span>
+                </p>
+                <p className="text-[10px] sm:text-xs text-brand-slate font-light italic font-sans">
+                  "{campaign.thankYouText}"
+                </p>
+              </div>
+
+              {/* Number display counter */}
+              <div className="flex items-center gap-3 bg-white border border-brand-borderMid/50 p-2.5 sm:p-3 rounded-xl shadow-brand-sm group-hover:scale-[1.02] transition-transform duration-300 select-none">
+                <div className="text-center">
+                  <span className="block text-2xl sm:text-3xl font-black text-brand-primary tracking-tight font-sans">
+                    {campaign.eoiCount}
+                  </span>
+                  <span className="block text-[8px] sm:text-[9px] font-extrabold tracking-widest text-brand-slate uppercase font-sans">
+                    {campaign.badge}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Dynamic Trust Stats grid */}
         {stats.length > 0 && (
