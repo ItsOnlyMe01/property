@@ -274,32 +274,14 @@ export default function LeadForm({ isOpen, onClose, ctaText }) {
 
                 {/* Premium Live EOI Campaign Card */}
                 {campaign && (
-                  <div className="relative overflow-hidden rounded-2xl border border-rose-100 bg-[#FFFDFE] p-4.5 shadow-[0_2px_12px_rgba(225,29,72,0.03)] group">
+                  <div className="relative overflow-hidden rounded-2xl border border-rose-100 bg-[#FFFDFE] p-4 text-center shadow-[0_2px_12px_rgba(225,29,72,0.02)]">
                     {/* Pulse alert indicator line at top */}
                     <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-rose-500 via-rose-400 to-rose-500 animate-pulse"></div>
                     
-                    <div className="flex flex-col gap-2.5">
-                      {/* Title Header with live badge */}
-                      <div className="flex items-center justify-between">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-rose-50 border border-rose-100/60 text-[9px] font-extrabold tracking-widest text-[#E11D48] uppercase animate-pulse">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#E11D48] animate-ping"></span>
-                          {campaign.closingSoonText || 'EOI WINDOW CLOSING SOON'}
-                        </span>
-                        <span className="text-[10px] font-bold text-brand-primary tracking-tight font-sans">
-                          ⚡ {campaign.eoiCount} EOI Applications
-                        </span>
-                      </div>
-
-                      {/* Main Campaign content */}
-                      <div className="text-left font-sans">
-                        <p className="text-[11px] font-extrabold text-brand-navy leading-normal">
-                          {campaign.inauguralOffer} on <span className="text-[#E11D48] underline decoration-rose-300 decoration-2 underline-offset-2 font-black">{campaign.deadline}</span>
-                        </p>
-                        <p className="text-[9px] text-brand-slateLight font-medium mt-1">
-                          {campaign.thankYouText}
-                        </p>
-                      </div>
-                    </div>
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-100/60 text-[9px] font-extrabold tracking-widest text-[#E11D48] uppercase animate-pulse">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#E11D48] animate-ping"></span>
+                      {campaign.closingSoonText || 'EOI WINDOW CLOSING SOON'}
+                    </span>
                   </div>
                 )}
 

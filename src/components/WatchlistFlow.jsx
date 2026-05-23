@@ -25,7 +25,7 @@ const iconMap = {
 };
 
 export default function WatchlistFlow({ data }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [showOptional, setShowOptional] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [error, setError] = useState('');

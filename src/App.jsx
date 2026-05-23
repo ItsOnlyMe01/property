@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Problem from './components/Problem';
+import Solution from './components/Solution';
+import Platform from './components/Platform';
+import HowItWorks from './components/HowItWorks';
+import TrustAndData from './components/TrustAndData';
 import WatchlistFlow from './components/WatchlistFlow';
-import Features from './components/Features';
 import About from './components/About';
 import Team from './components/Team';
 import FAQ from './components/FAQ';
@@ -35,20 +39,28 @@ export default function App() {
           onOpenLeadForm={handleOpenLeadForm} 
         />
 
-        {/* Watchlist Section */}
+        {/* The Problem Section */}
+        <Problem />
+
+        {/* Watchlist Section (Appraisal Radar Setup) */}
         <WatchlistFlow 
           data={contentData.watchlistSection} 
         />
 
-        {/* Features Section */}
-        <Features 
-          data={contentData.features} 
-        />
+        {/* The Solution Section */}
+        <Solution />
 
-        {/* About Section */}
-        <About 
-          data={contentData.about} 
-        />
+        {/* The Platform Capabilities Section */}
+        <Platform onOpenLeadForm={handleOpenLeadForm} />
+
+        {/* The How It Works Section */}
+        <HowItWorks />
+
+        {/* The Trust And Data Section */}
+        <TrustAndData />
+
+        {/* The About Us Section */}
+        <About />
 
         {/* Team Section */}
         <Team 

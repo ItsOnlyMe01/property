@@ -11,26 +11,22 @@
     "secondaryCtaText": "Create Account"
   },
   "hero": {
-    "badge": "LIVE MARKET INTELLIGENCE",
-    "title": "Empowering Smarter Property Decisions Across India.",
-    "subtitle": "A dual-mode platform to track your owned properties and watchlist assets with institutional-grade data.",
+    "badge": "Interested in Gurgaon real estate? Join our waitlist to get early access.",
+    "title": "Track Property Like an Investment",
+    "subtitle": "Smart real-estate tracking and insights for Gurgaon property buyers and owners.",
     "cta": "Join the Waitlist",
     "stats": [
       {
-        "value": "62+",
-        "label": "DATA POINTS"
+        "value": "12,400+",
+        "label": "PROPERTIES TRACKED"
       },
       {
-        "value": "40+",
-        "label": "PROPERTY TYPES"
+        "value": "8 Cities",
+        "label": "LIVE COVERAGE"
       },
       {
-        "value": "12",
-        "label": "INDIAN CITIES"
-      },
-      {
-        "value": "4 Sources",
-        "label": "VALUATION ENGINE"
+        "value": "₹4,200 Cr",
+        "label": "PORTFOLIO VALUE"
       }
     ],
     "securityText": "Secure waitlist registry allocation • Zero spam guarantee"
@@ -183,9 +179,9 @@
     }
   },
   "watchlistSection": {
-    "title": "Appraisal Radar & Watchlist",
-    "subtitle": "Track official registrations, circle rate shifts, and builder compliance indices in real-time.",
-    "ctaText": "Configure Investment Radar",
+    "title": "Configure Your Continuous Appraisal Radar",
+    "subtitle": "Select your property type and locality in Gurgaon to track true median valuations, circle rate revisions, and builder compliance scores automatically.",
+    "ctaText": "Configure Valuation Radar (10 seconds)",
     "collapseText": "Close Setup Panel",
     "successTitle": "Radar Activated successfully!",
     "successSubtitle": "Your property tracker is live. We are writing parameters to sessionStorage.",
